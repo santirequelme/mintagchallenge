@@ -2,22 +2,23 @@
   font-family:"Helvetica Neue Bold";
   src:url('/assets/fonts/HelveticaNeue-Bold.ttf')  format('truetype'),
     url('/assets/fonts/HelveticaNeue-Bold.woff')  format('woff');
-    font-weight: 700;
-}
-
-@font-face{
-  font-family:"Helvetica Neue Regular";
-  src:url('./assets/fonts/HelveticaNeueR.ttf')  format('truetype'),
-    url('./assets/fonts/HelveticaNeueR.woff')  format('woff');
-    font-weight: 400;
+  font-weight: 700;
 }
 
 @font-face{
   font-family:"Helvetica Neue Medium";
   src:url('./assets/fonts/HelveticaNeue-Medium.ttf')  format('truetype'),
     url('./assets/fonts/HelveticaNeue-Medium.woff')  format('woff');
-    font-weight: 500;
+  font-weight: 500;
 }
+
+@font-face{
+  font-family:"Helvetica Neue Regular";
+  src:url('./assets/fonts/HelveticaNeueR.ttf')  format('truetype'),
+    url('./assets/fonts/HelveticaNeueR.woff')  format('woff');
+  font-weight: 400;
+}
+
 
 :root {
 
@@ -31,6 +32,11 @@
   
 }
 
+html {
+  max-width: 600px; 
+	margin: 0 auto !important; 
+	float: none !important; 
+}
 * {
   margin: 0;
   padding: 0;
@@ -44,21 +50,21 @@ body {
 }
 
 body, input, textarea, p, span{
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 400;
   font-size: 1rem;
   color:var(--color-font);
 }
 
 button {
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "Helvetica Neue", Helvetica,  sans-serif;
   font-weight: 500;
   font-size: 1rem;
   color:var(--color-font);
 }
 
 h1, h2, h3, h4, h5, h6,  {
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 700;
   font-size: 1rem;
   color:var(--color-font);
@@ -67,7 +73,7 @@ h1, h2, h3, h4, h5, h6,  {
 
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   padding: 2rem 0;
   flex-direction:column;
   align-items: center;
@@ -75,14 +81,14 @@ h1, h2, h3, h4, h5, h6,  {
 }
 
 .logo {
-  height: 2rem;
+  height: 1.5rem;
   z-index:6;
 }
 
 .header h1 {
   padding: 8rem 0;
-  font-size: 5rem;
-  max-width: 45rem;
+  font-size: 2.625rem;
+  max-width: 25rem;
   text-align: center;
   z-index:3;
 }
@@ -105,19 +111,15 @@ h1, h2, h3, h4, h5, h6,  {
 }
 
 .btnLets {
-  max-width:20rem;
+  max-width:19rem;
   background-color:--white;
   border: white;
-  padding: 1rem 2rem;
+  padding: 0.8rem 2rem;
   z-index:7;
   border-radius:5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   font-size: 1rem;
   cursor: pointer;
-  font-weight: 700;
-}
-.btnLets p {
-font-weight:500;
 }
 
 .btnLets:hover {
@@ -131,23 +133,37 @@ font-weight:500;
 }
 
 
+@media (max-width: 1024px) {
+.img01{
+  top:14rem;
+  height:20rem;
+  transition: 0.2s;
+}
 
-@media (max-width: 756px) {
+.img02 {
+  height:20rem;
+  transition: 0.2s;
+}
+
+}
+
+
+@media (max-width: 500px) {
   .logo {
     height: 1.5rem;
   }
   .img01{
-    height:22rem;
+    height:17rem;
     z-index: 1;
     transition: 0.2s;
-    top:37%;
+    top:50%;
     opacity: 0.6;
   }
   
   .img02 {
     position: absolute;
     left: 0;
-    height:22rem;
+    height:17rem;
     opacity: 0.6;
   }
   .header {
@@ -201,9 +217,10 @@ footer span{
 }
 
 .cards h1 {
+  
   text-align: center;
-  font-size: 2rem;
-  max-width:37rem;
+  font-size: 1.5rem;
+  max-width:28rem;
   padding: 2rem 1rem;
 }
 
@@ -212,7 +229,7 @@ footer span{
   justify-content: space-evenly;
   align-items: center;
   width: 90%;
-  height: 18rem;
+  height: 15.5rem;
   background: #ffffff;
   border-radius: 30px;
   flex-flow: row wrap;
@@ -220,11 +237,11 @@ footer span{
 }
 
 .card h2 {
-  font-size:1.2rem;
+  font-size: 1rem;
 }
 
 .card img {
-  height: 11rem;
+  height: 9rem;
   margin: 0rem 1rem;
   transition: transform .2s;
 }
@@ -236,20 +253,21 @@ footer span{
 }
 
 .description {
-  width:40%;
+  width:57%;
   display: flex;
   flex-direction:column;
-  gap: 2rem;
+  padding: 1.75rem;
+  gap: 1rem;
 }
 
 .description p {
+  font-size: 0.8125rem;
   line-height: 1.5;
 }
 
-@media (max-width: 756px) {
+@media (max-width: 500px) {
   .cards h1 {
     text-align: center;
-    font-size: 1.5rem;
   }
   .card {
     display:flex;
@@ -273,8 +291,9 @@ footer span{
   background:none;
   border: 2px solid #6F536F;
   border-radius:7px;
-  padding: 0.75rem 0;
+  padding: 0.5rem 0;
   cursor: pointer;
+  font-size: 0.875rem;
 }
 
 .buttonLM:hover{
@@ -288,22 +307,21 @@ footer span{
   flex-direction: column;
   align-items:center;
   justify-content: center;
-  width:100%;
-  padding: 4rem 0;
+  max-width: 600px;
+  padding: 2rem 0;
 }
 .insights h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align:center;
 }
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10rem;
+  gap: 1rem;
   align-items: center;
   justify-content: center;
-  max-width: 90%;
-  border-radius: 10px;
-  padding: 3rem 0;
+  max-width: 100%;
+  padding: 2rem 0;
 }
 
 .item {
@@ -311,38 +329,36 @@ footer span{
   flex-direction:column;
   align-items: center;
   justify-content: flex-end;
-  gap: 1rem;
-  width: 20rem;
-  height: 22rem;
+  gap: 1.5rem;
+  width: 15rem;
   text-align: center;
 
 }
 .item button {
-  width:10rem;
+  width:7.125rem;
 }
 .item h2 {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .item p {
-  font-size:0.75;
+  font-size:0.8125rem;
   line-height:1.7;
 
 }
 .item span{
+  font-size:0.8125rem;
   font-weight: 700;
 }
 .item img {
-  height: 6rem;
+  height: 4.125rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .wrapper {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
   .insights h1 {
-    font-size: 1.5rem;
-    text-align:center;
     width:15rem;
   }
 }
